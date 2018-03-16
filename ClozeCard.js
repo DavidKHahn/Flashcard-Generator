@@ -16,33 +16,18 @@
 
 var BasicCard = require("./BasicCard.js");
 
-function ClozeCard(text,cloze){
+function ClozeCard(text, cloze) {
     this.text = text;
     this.cloze = cloze;
-    //this.partial=(this.text).replace(this.cloze,"...");
-    this.partial = function(){
-        console.log((this.text).replace(this.cloze,"..."));
-        if( ((this.text).indexOf(this.cloze)) === -1){
-            console.log("Error because '"+ this.cloze+ "' doesn't appear in '"+this.text+"' sentence");
+    this.partial = function () {
+        console.log((this.text).replace(this.cloze, "..."));
+        if (((this.text).indexOf(this.cloze)) === -1) {
+            console.log("the cloze deletion does _not_ appear in the input text");
         }
-     };
-    this.fullText = function(){
+    };
+    this.fullText = function () {
         console.log((this.text));
-        //console.log((this.cloze)+(this.text));
     };
 };
-var BasicCard = require("./BasicCard.js");
-
-function ClozeCard(text, cloze) {
-    this.cloze = text,
-    this.partial = cloze,
-    this.partial = function() {
-        console.log((this.text).replace(this.cloze,"..."));
-           this.partial = text.replace(cloze, "... ");
-    if ((this.text.search(this.cloze)) < 0) {
-        console.log("the cloze deletion does _not_ appear in the input text");
-    }
-}
-
 
 module.exports = ClozeCard;
